@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给庆雯的小情书💌</title>
+    <style>
+        body {
+            font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+            background-color: #fff5f5;
+            text-align: center;
+            padding: 20px;
+            color: #ff6b88;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(255, 107, 136, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            color: #ff6b88;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .heart {
+            color: red;
+            font-size: 24px;
+            animation: beat 1s infinite alternate;
+            display: inline-block;
+        }
+        @keyframes beat {
+            to { transform: scale(1.2); }
+        }
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .heart-float {
+            position: absolute;
+            color: rgba(255, 107, 136, 0.7);
+            animation: float 6s ease-in infinite;
+            font-size: 20px;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-500px) rotate(360deg); opacity: 0; }
+        }
+        .cute-img {
+            width: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .ending {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #ff6b88;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hearts" id="hearts"></div>
+        
+        <h1>亲爱的庆雯 <span class="heart">❤</span></h1>
+        
+        <img src="https://emojicdn.elk.sh/🥰" alt="可爱表情" class="cute-img">
+        
+        <p>遇见你的那一天，我的世界突然变得明亮起来✨</p>
+        
+        <p>你的笑容像春天的阳光，温暖了我的心房 <span class="heart">❤</span></p>
+        
+        <p>和你在一起的每一刻，时间都变得特别美好~</p>
+        
+        <p>你是我生命中最可爱的惊喜，像小熊软糖一样甜 🐻🍬</p>
+        
+        <p>我想牵着你的手，一起看遍世间所有美好风景 🌈</p>
+        
+        <p>庆雯，我喜欢你！可以做我的女朋友吗？</p>
+        
+        <div class="ending">❤️ 永远爱你 ❤️</div>
+    </div>
+
+    <script>
+        // 创建漂浮的爱心
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-float';
+                heart.innerHTML = '❤';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heartsContainer.appendChild(heart);
+            }
+        }
+        
+        // 页面加载时创建爱心
+        window.onload = createHearts;
+    </script>
+</body>
+</html>
